@@ -95,6 +95,8 @@ if ($option == 'Mensagens') {
         <?php
     } else if ($_POST['option'] == 'Pedidos') {
         include_once '../CONTROLLER/OrderController.php';
+        include_once '../CONTROLLER/ClientController.php';
+        include_once '../CONTROLLER/ProdutoController.php';
         ModalDelete::createModalDelete('../CONTROLLER/OrderController.php');
         $result = OrderController::search();
         ?>
@@ -104,10 +106,8 @@ if ($option == 'Mensagens') {
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Cliente</th>
                     <th>Produto</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
                     <th>Qtd</th>
                     <th>Tam</th>
                     <th>Cor</th>
@@ -119,13 +119,11 @@ if ($option == 'Mensagens') {
 
                     <tr>
                         <td id="id<?= $value[0] ?>"><?= $value[0] ?></td>
-                        <td id="prod<?= $value[0] ?>"><?= $value[1] ?></td>
-                        <td id="nome<?= $value[0] ?>"><?= $value[2] ?></td>
-                        <td id="email<?= $value[0] ?>"><?= $value[3] ?></td>
-                        <td id="tel<?= $value[0] ?>"><?= $value[4] ?></td>
-                        <td id="qtd<?= $value[0] ?>"><?= $value[5] ?></td>
-                        <td id="tam<?= $value[0] ?>"><?= $value[6] ?></td>
-                        <td id="cor<?= $value[0] ?>"><?= $value[7] ?></td>
+                        <td id="cli<?= $value[0] ?>"><?= ClientController::getClient($value[2])[0][1] ?></td>
+                        <td id="tel<?= $value[0] ?>"><?= ProdutoController::getProduct($value[1])[0][2] ?></td>
+                        <td id="qtd<?= $value[0] ?>"><?= $value[3] ?></td>
+                        <td id="tam<?= $value[0] ?>"><?= $value[4] ?></td>
+                        <td id="cor<?= $value[0] ?>"><?= $value[5] ?></td>
                         <td>
                             <button type="button"  class="btn btn-primary view-p"  data-toggle="modal" data-target="#view" data-whatever="view">Visualizar</button>
                             <button type="button"  class="btn btn-success view-e" data-toggle="modal" data-target="#view" data-whatever="view">Finazalizar</button>

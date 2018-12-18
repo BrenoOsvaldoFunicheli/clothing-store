@@ -34,7 +34,7 @@
                                 <div class="col-md-6">
                                     <div class="form-label-group">
                                         <input type="text" id="firstName" name="nome" class="form-control" placeholder="Nome" required="required" autofocus="autofocus">
-                                        <input type="hidden" name="option" value="exist" class="form-control">
+                                        <input type="hidden" name="option" value="save" class="form-control">
                                         <label for="firstName">Nome</label>
                                     </div>
                                 </div>
@@ -62,6 +62,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-md-6">
@@ -100,11 +101,27 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                Sexo
+                            </label>
+                            <div class="form-label">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="sexo btn btn active">
+                                        <input type="radio" name="sexo" value="M" id="option1" autocomplete="off" checked> Masculino
+                                    </label>
+                                    <label class="btn sexo">
+                                        <input type="radio" name="sexo" value="F" id="option2" autocomplete="off"> Feminino
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                         <button class="btn btn-primary btn-block" type="submit">Register</button>
                     </form>
                     <div class="text-center">
-                        <a class="d-block small mt-3" href="login.html">Login Page</a>
-                        <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+                        <a class="d-block small mt-3" href="login.php">Login Page</a>
+                        <a class="d-block small" href="#">Forgot Password?</a>
                     </div>
                 </div>
             </div>
@@ -113,7 +130,15 @@
         <!-- Bootstrap core JavaScript-->
         <script src="../vendor/jquery/jquery.min.js"></script>
         <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script>
+            $('.sexo').click(function () {
+                $('label').removeClass('active');
+                $('label').removeClass('btn-primary');
+                $(this).addClass('active')
+                $(this).addClass('btn-primary');
 
+            });
+        </script>
         <!-- Core plugin JavaScript-->
         <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 

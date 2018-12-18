@@ -4,7 +4,7 @@ include_once '../CONTROLLER/CategoriaController.php';
 $search = new categoriaController();
 $categorias = $search->getCategorias();
 session_start();
-$_SESSION['navigation'] = 'nav';
+//$_SESSION['navigation'] = 'nav';
 ?>
 <html lang="en">
 

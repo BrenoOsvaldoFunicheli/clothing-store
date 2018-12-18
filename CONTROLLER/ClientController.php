@@ -24,18 +24,40 @@ class ClientController {
 }
 
 if ($_POST) {
-    $option =$_POST['option'];
+    $option = $_POST['option'];
     if ($option == 'exist') {
+        $senha = $_POST['senha'];
+        $email = $_POST['email'];
+
         $dao = new ClientDAO();
         $result = $dao->exist($email, $senha);
 
         if (count($result) > 0) {
-            return true;
+            session_start();
+            $_SESSION['uCod'] = $result[0][0];
+            $_SESSION['uNome'] = $result[0][1];
         } else {
-            return false;
+            $_SESSION['uCod'] = '0';
+            $_SESSION['uNome'] = 'deslog';
         }
-    }else if($option == 'save'){
+
+        header('Location: ../index.php');
+        
+    } else if ($option == 'save') {
         $dao = new ClientDAO();
-        $dao->save();
+        
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $tel = $_POST['tel'];
+        $cel = $_POST['cel'];
+        $cid = $_POST['cid'];
+        $sexo = $_POST['sexo'];
+        $CEP = $_POST['CEP'];
+        $CPF = $_POST['CPF'];
+        
+        print_r($_POST);
+        $dao->save($nome, $senha, $sexo, $CPF, $tel, $cel, $email, $cid, $CEP);
+         header('Location: ../VIEW/login.php');
     }
 }

@@ -34,6 +34,13 @@ class ProdutoController {
         $result = $dao->search();
         return $result;
     }
+    
+    public static function getProduct($id) {
+        $dao = new ProdutoDAO ();
+        $result = $dao->findById($id);
+        return $result;
+    }
+    
 
 }
 

@@ -26,6 +26,29 @@ class Header {
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="../index.php">Voltar</a>
+                        </li> <li class="nav-item">
+                            <?php
+//                                    session_destroy();
+                            if (!(isset($_SESSION))) {
+                                session_start();
+                                $_SESSION['uCod'] = '0';
+                                $cod_user = $_SESSION['uCod'];
+                            } else {
+                                
+                                $cod_user = $_SESSION['uCod'];
+                            }
+                            if ($cod_user != '0') {
+//                                include_once '../CONTROLLER/ClientController.php';
+//                                ClientController::getClient($cod_user);
+                                ?>
+                                <a class="nav-link js-scroll-trigger" href="">Minha Conta</a>
+                            <?php } else {
+                                ?>
+
+                                <a class="nav-link js-scroll-trigger" href="login.php">Cliente</a>
+                                <?php
+                            }
+                            ?>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" class="btn " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Contato</a>
@@ -51,15 +74,24 @@ class Header {
 
                         <li class="nav-item">
                             <?php
-                           
-                            $cod_user = $_SESSION['user'] ?? '0';
-                            if ($cod_user != 0) {
-                                include_once '../CONTROLLER/ClientController.php';
-                                ClientController::getClient($cod_user);
+//                                    session_destroy();
+                            if (!(isset($_SESSION))) {
+                                session_start();
+                                $_SESSION['uCod'] = '0';
+                                $cod_user = $_SESSION['uCod'];
                             } else {
+
+                                $cod_user = $_SESSION['uCod'];
+                            }
+                            if ($cod_user != '0') {
+//                                include_once '../CONTROLLER/ClientController.php';
+//                                ClientController::getClient($cod_user);
                                 ?>
-                            
-                            <a class="nav-link js-scroll-trigger" href="VIEW/login.php?path=CONTROLLER/ClientController.php">Cliente</a>
+                                <a class="nav-link js-scroll-trigger" href="">Minha Conta</a>
+                            <?php } else {
+                                ?>
+
+                                <a class="nav-link js-scroll-trigger" href="VIEW/login.php">Cliente</a>
                                 <?php
                             }
                             ?>

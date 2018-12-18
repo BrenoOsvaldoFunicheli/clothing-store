@@ -5,6 +5,7 @@
     $search = new ProdutoController();
     $id = $_GET['id'];
     $produto = $search->getProductById($id);
+    session_start();
     ?>
     <head>
 
