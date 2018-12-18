@@ -1,3 +1,6 @@
+# clothing-store
+Site de Roupas com estampas que permite ao Dono da loja gerenciar produtos, categorias de produtos e permite comunicação do usuário com o dono da loja além disso, o usuário pode escolher as roupas com a cor que lhe agradar. Foi desenvolvido Com princípios POO utilizando bootstrap, HTML5, CSS3, JavsScript com a biblioteca JQuery, PHP 7.0, MySQL e faz a persistencia de dados com a biblioteca PDO.
+
 # [Start Bootstrap - Grayscale](https://startbootstrap.com/template-overviews/grayscale/)
 
 [Grayscale](http://startbootstrap.com/template-overviews/grayscale/) is a multipurpose, one page HTML theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
@@ -72,5 +75,3 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 ## Copyright and License
 
 Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/gh-pages/LICENSE) license.
-# clothing-store
-Site de Roupas com estampas que permite ao Dono da loja gerenciar produtos, categorias de produtos e permite comunicação do usuário com o dono da loja além disso, o usuário pode escolher as roupas com a cor que lhe agradar. Foi desenvolvido Com princípios POO utilizando bootstrap, HTML5, CSS3, JavsScript com a biblioteca JQuery, PHP 7.0, MySQL e faz a persistencia de dados com a biblioteca PDO.
