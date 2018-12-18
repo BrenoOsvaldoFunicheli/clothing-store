@@ -171,4 +171,56 @@ class ModalViewer {
         <?php
     }
 
-}
+    public function createModalPedido($path) {
+        ?>
+        <div class = "modal fade" id = "view" tabindex = "-1" role = "dialog" aria-labelledby = "exampleModalLabel" aria-hidden = "true">
+            <div class = "modal-dialog" role = "document">
+                <div class = "modal-content">
+                    <div class = "modal-header">
+                        <h5 class = "modal-title" id = "view">Produto</h5>
+                        <button type = "button" class = "close" data-dismiss = "modal" aria-label = "Close">
+                            <span aria-hidden = "true">&times;
+                            </span>
+                        </button>
+                    </div>
+                    <div class = "modal-body">
+                        <form action="<?= $path ?>" method="post">
+
+                            <div class = "form-group">
+                                <input type = "hidden" class = "form-control" id = "idPed" disabled = "true" value = "<?php ?>">
+                            </div>
+                            <div class = "form-group">
+                                <label for = "recipient-name" class = "col-form-label">Produto</label>
+                                <input type = "text" class = "form-control" id = "prodPed" disabled = "true">
+                            </div>
+
+                            <div class = "form-group">
+                                <label for = "message-text" class = "col-form-label">valor</label>
+                                <input type = "text" class = "form-control" id = "telPed" disabled = "true">
+                            </div>
+                            <div class = "form-group">
+                                <label for = "message-text" class = "col-form-label">Qtd</label>
+                                <input class = "form-control" id = "qtdPed" disabled = "true">
+                            </div>
+                            <div class = "form-group">
+                                <label for = "message-text" class = "col-form-label">Tam</label>
+                                <input class = "form-control" id = "tamPed" disabled = "true">
+                            </div>
+                            <div class = "form-group">
+                                <label for = "message-text" class = "col-form-label">Cor</label>
+                                <input class = "form-control" id = "corPed" disabled = "true">
+                            </div>
+
+                            <div class = "modal-footer">
+                                <button type = "button" class = "btn btn-secondary" data-dismiss = "modal">Close</button>
+                                <button type = "submit" class = "btn btn-success" disabled = "false" id = "Finalizar" >Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <?php
+        }
+
+    }
+    

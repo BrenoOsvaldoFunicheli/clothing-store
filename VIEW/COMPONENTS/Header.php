@@ -15,7 +15,6 @@ class Header {
     //put your code here
 
     public static function getGeneralHeader() {
-        
         ?>
         <nav class="navbar navbar-expand-lg navbar-light " id="mainNav">
             <div class="container">
@@ -49,14 +48,30 @@ class Header {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
+
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#projects">Trabalhos Realizados</a>
+                            <?php
+                           
+                            $cod_user = $_SESSION['user'] ?? '0';
+                            if ($cod_user != 0) {
+                                include_once '../CONTROLLER/ClientController.php';
+                                ClientController::getClient($cod_user);
+                            } else {
+                                ?>
+                            
+                            <a class="nav-link js-scroll-trigger" href="VIEW/login.php?path=CONTROLLER/ClientController.php">Cliente</a>
+                                <?php
+                            }
+                            ?>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="VIEW/PageProducts.php">Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
+                            <a class="nav-link js-scroll-trigger" href="#about">Plataforma</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#projects">Sobre Nós</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="#signup">Contato</a>

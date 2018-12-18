@@ -31,6 +31,7 @@
         include_once 'VIEW/COMPONENTS/Footer.php';
         include_once './VIEW/COMPONENTS/Header.php';
         ModalCadastro::createModalMain('./CONTROLLER/MessegerController.php');
+        session_start();
         Header::getMainHeader();
         ?>
         <!-- Header -->
@@ -192,7 +193,7 @@
         </section>
 
         <!-- Footer -->
-<?php Footer::getMainFooter(); ?>
+        <?php Footer::getMainFooter(); ?>
 
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>
