@@ -15,6 +15,8 @@ class Header {
     //put your code here
 
     public static function getGeneralHeader() {
+        include_once '../VIEW/MODAL/ModalContato.php';
+        ModalCadastro::createModalLogin('CONTROLLER/ClientController.php');
         ?>
         <nav class="navbar navbar-expand-lg navbar-light " id="mainNav">
             <div class="container">
@@ -28,7 +30,6 @@ class Header {
                             <a class="nav-link js-scroll-trigger" href="../index.php">Voltar</a>
                         </li> <li class="nav-item">
                             <?php
-//                                    session_destroy();
                             if (!(isset($_SESSION))) {
                                 session_start();
                                 $_SESSION['uCod'] = '0';
@@ -41,10 +42,10 @@ class Header {
 //                                ClientController::getClient($cod_user);
                                 ?>
                                 <a class="nav-link js-scroll-trigger" href="">Minha Conta</a>
-                            <?php } else {
+                                <?php
+                            } else {
                                 ?>
-
-                                <a class="nav-link js-scroll-trigger" href="login.php">Cliente</a>
+                                <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#login">Cliente</a>        
                                 <?php
                             }
                             ?>
@@ -60,6 +61,8 @@ class Header {
     }
 
     public static function getMainHeader() {
+        include_once 'VIEW/MODAL/ModalContato.php';
+        ModalCadastro::createModalLogin('CONTROLLER/ClientController.php');
         ?>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
@@ -73,11 +76,11 @@ class Header {
 
                         <li class="nav-item">
                             <?php
-//                                    session_destroy();
                             if (!(isset($_SESSION))) {
-                                $_SESSION['uCod'] = '0';
+                                session_start();
                                 $cod_user = $_SESSION['uCod'];
                             } else {
+                                $_SESSION['uCod'] = '0';
                                 $cod_user = $_SESSION['uCod'];
                             }
                             if ($cod_user != '0') {
@@ -85,13 +88,14 @@ class Header {
 //                                ClientController::getClient($cod_user);
                                 ?>
                                 <a class="nav-link js-scroll-trigger" href="">Minha Conta</a>
-                            <?php } else {
-                                ?>
-
-                                <a class="nav-link js-scroll-trigger" href="VIEW/login.php">Cliente</a>
                                 <?php
-                            }
-                            ?>
+                            } else {
+                                ?>
+                                <!--<button type="button" class="btn btn-primary" >Large modal</button>-->
+                                <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#login">Cliente</a>        
+            <?php
+        }
+        ?>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="VIEW/PageProducts.php">Produtos</a>

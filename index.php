@@ -127,7 +127,7 @@
 
                         <form class="form-inline d-flex">
 
-                            <button type="button" class="btn btn-primary mx-auto" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Clique aqui para falar conosco</button>
+                            <button type="button" class="btn btn-primary mx-auto" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Fale Conosco</button>
                         </form>
 
                     </div>
