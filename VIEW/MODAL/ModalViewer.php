@@ -171,9 +171,9 @@ class ModalViewer {
         <?php
     }
 
-    public function createModalPedido($path) {
+    public static function createModalPedido($path) {
         ?>
-        <div class = "modal fade" id = "view" tabindex = "-1" role = "dialog" aria-labelledby = "exampleModalLabel" aria-hidden = "true">
+        <div class = "modal fade" id = "pedidoM" tabindex = "-1" role = "dialog" aria-labelledby = "exampleModalLabel" aria-hidden = "true">
             <div class = "modal-dialog" role = "document">
                 <div class = "modal-content">
                     <div class = "modal-header">
@@ -187,28 +187,29 @@ class ModalViewer {
                         <form action="<?= $path ?>" method="post">
 
                             <div class = "form-group">
-                                <input type = "hidden" class = "form-control" id = "idPed" disabled = "true" value = "<?php ?>">
+                                <input type = "hidden" class = "form-control" id = "idPed" name="idPed">
+                                <input type = "hidden" class = "form-control" name="option"  value ="finish">
                             </div>
                             <div class = "form-group">
                                 <label for = "recipient-name" class = "col-form-label">Produto</label>
-                                <input type = "text" class = "form-control" id = "prodPed" disabled = "true">
+                                <input type = "text" class = "form-control" id = "prodPed" name="prodPed" disabled = "true">
                             </div>
 
                             <div class = "form-group">
-                                <label for = "message-text" class = "col-form-label">valor</label>
-                                <input type = "text" class = "form-control" id = "telPed" disabled = "true">
+                                <label for = "message-text" class = "col-form-label">cliente</label>
+                                <input type = "text" class = "form-control" id = "cliPed" name="cliPed" disabled = "true">
                             </div>
                             <div class = "form-group">
                                 <label for = "message-text" class = "col-form-label">Qtd</label>
-                                <input class = "form-control" id = "qtdPed" disabled = "true">
+                                <input class = "form-control" id = "qtdPed" name="qtdPed" disabled = "true">
                             </div>
                             <div class = "form-group">
                                 <label for = "message-text" class = "col-form-label">Tam</label>
-                                <input class = "form-control" id = "tamPed" disabled = "true">
+                                <input class = "form-control" id = "tamPed" name="tamPed" disabled = "true">
                             </div>
                             <div class = "form-group">
                                 <label for = "message-text" class = "col-form-label">Cor</label>
-                                <input class = "form-control" id = "corPed" disabled = "true">
+                                <input class = "form-control" id = "corPed" name="corPed" disabled = "true">
                             </div>
 
                             <div class = "modal-footer">
@@ -219,8 +220,8 @@ class ModalViewer {
                     </div>
                 </div>
             </div>
-            <?php
-        }
-
+        </div>
+        <?php
     }
-    
+
+}

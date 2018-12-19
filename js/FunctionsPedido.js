@@ -2,38 +2,38 @@
 
 //
 //////
-////function habilitar(value) {
-//    $("input").attr('disabled', value);
-//    $("textarea").attr('disabled', value);
-//    $("#save").attr('disabled', value);
-////    $("#id").attr('disabled', true);
-//}
+function habilitar(value) {
+    
+    $("#Finalizar").attr('disabled', value);
+    $("#idPed").attr('disabled', value);
+}
 //
-//function fill(valor) {
-//    id = document.getElementById('id' + valor).innerHTML;
-//    nome = document.getElementById('nome' + valor).innerHTML;
-//    prod = document.getElementById('prod' + valor).innerHTML;
-//    email = document.getElementById('email' + valor).innerHTML;
-//    tel = document.getElementById('tel' + valor).innerHTML;
-//    qtd = document.getElementById('qtd' + valor).innerHTML;
-//    cor = document.getElementById('cor' + valor).innerHTML;
-//    tam = document.getElementById('tam' + valor).innerHTML;
+function fill(valor) {
+    id = document.getElementById('id' + valor).innerHTML;
+    prod = document.getElementById('prod' + valor).innerHTML;
+    qtd = document.getElementById('qtd' + valor).innerHTML;
+    cliente = document.getElementById('cli' + valor).innerHTML;
+    cor = document.getElementById('cor' + valor).innerHTML;
+    tam = document.getElementById('tam' + valor).innerHTML;
+    $("#idPed").attr("value", id);
+    $("#prodPed").attr("value", prod);
+    $("#cliPed").attr("value", cliente);
+    $("#qtdPed").attr("value", qtd);
+    $("#corPed").attr("value", cor);
+    $("#tamPed").attr("value", tam);
+}
 //
-//    $("#id").attr("value", id);
-//    $("#nome").attr("value", nome);
-//    $("#prod").attr("value", prod);
-//    $("#tel").attr("value", tel);
-//    $("#email").attr("value", email);
-//    $("#qtd").attr("value", qtd);
-//    $("#cor").attr("value", cor);
-//    $("#tam").attr("value", tam);
-//}
-//
-//$(".view-p").click(function () {
-//    habilitar(true);
-//    valor = $(this).attr('id');
-////    fill(valor);
-//});
+$(".viewBtn").click(function () {
+    habilitar(true);
+    valor = $('#viewBtn').attr('value');
+    fill(valor);
+});
+
+$('.viewFin').click(function (){
+    habilitar(false);
+    valor = $('#viewBtn').attr('value');
+    fill(valor);
+});
 //
 //$(".view-e").click(function () {
 //    habilitar(false);
@@ -47,7 +47,7 @@
 //    $('#dado').attr('value', id);
 //});
 ////
-$('button[data-whatever=delete]').click(function (){
+$('button[data-whatever=delete]').click(function () {
     valor = $(this).attr('id');
     id = document.getElementById('id' + valor).innerHTML;
     $('#rem').attr('value', id);

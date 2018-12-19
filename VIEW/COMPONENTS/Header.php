@@ -34,7 +34,6 @@ class Header {
                                 $_SESSION['uCod'] = '0';
                                 $cod_user = $_SESSION['uCod'];
                             } else {
-                                
                                 $cod_user = $_SESSION['uCod'];
                             }
                             if ($cod_user != '0') {
@@ -76,11 +75,9 @@ class Header {
                             <?php
 //                                    session_destroy();
                             if (!(isset($_SESSION))) {
-                                session_start();
                                 $_SESSION['uCod'] = '0';
                                 $cod_user = $_SESSION['uCod'];
                             } else {
-
                                 $cod_user = $_SESSION['uCod'];
                             }
                             if ($cod_user != '0') {

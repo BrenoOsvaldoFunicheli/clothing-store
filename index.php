@@ -39,7 +39,7 @@
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
                     <h1 class="mx-auto my-0 text-uppercase">Estampaty</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">A sua loja preferida, de Roupas, Uniformes.</h2>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">A sua loja preferida de estampas em camisas e uniformes</h2>
                     <a href="#about" class="btn btn-primary js-scroll-trigger">Compre já</a>
                 </div>
             </div>
@@ -71,8 +71,8 @@
                     </div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>Shoreline</h4>
-                            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                            <h4>Confecção De Camisas</h4>
+                            <p class="text-black-50 mb-0">Nós da estampaty, possuimos um 10 anos de experiência na confecção de camisas, camisetas e uniformes personalizados. Nosso trabalho é transformar o pensamento de nossos clientes em vestimenta.</p>
                         </div>
                     </div>
                 </div>
@@ -86,8 +86,8 @@
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Misty</h4>
-                                    <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                    <h4 class="text-white">Sublimação</h4>
+                                    <p class="mb-0 text-white-50">Processo de estamparia onde você imprime um desenho em um papel para sublimação com tinta sublimática, e depois, através de uma prensa quente, transfere o desenho do papel para a peça de roupa.</p>
                                     <hr class="d-none d-lg-block mb-0 ml-0">
                                 </div>
                             </div>
@@ -104,8 +104,8 @@
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Mountains</h4>
-                                    <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                                    <h4 class="text-white">Serigrafia</h4>
+                                    <p class="mb-0 text-white-50">Uma das técnicas mais utilizadas pelas fábricas e confecções é a serigrafia — que é um dos métodos mais antigos de estamparia. Para sua realização, é necessária a gravação de telas com o negativo das imagens que serão passadas para o tecido.</p>
                                     <hr class="d-none d-lg-block mb-0 mr-0">
                                 </div>
                             </div>

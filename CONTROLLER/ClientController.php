@@ -36,16 +36,14 @@ if ($_POST) {
             session_start();
             $_SESSION['uCod'] = $result[0][0];
             $_SESSION['uNome'] = $result[0][1];
+            header('Location: ../index.php');
         } else {
             $_SESSION['uCod'] = '0';
             $_SESSION['uNome'] = 'deslog';
         }
-
-        header('Location: ../index.php');
-        
     } else if ($option == 'save') {
         $dao = new ClientDAO();
-        
+
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $senha = $_POST['senha'];
@@ -55,9 +53,9 @@ if ($_POST) {
         $sexo = $_POST['sexo'];
         $CEP = $_POST['CEP'];
         $CPF = $_POST['CPF'];
-        
+
         print_r($_POST);
         $dao->save($nome, $senha, $sexo, $CPF, $tel, $cel, $email, $cid, $CEP);
-         header('Location: ../VIEW/login.php');
+        header('Location: ../VIEW/login.php');
     }
 }

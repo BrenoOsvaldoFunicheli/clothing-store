@@ -158,4 +158,46 @@ class ModalCadastro {
         <?php
     }
 
+    public function createModalLogin($path) {
+        ?>
+
+        <div class="container">
+            <div class="card card-login mx-auto mt-5">
+                <div class="card-header">Login</div>
+                <div class="card-body">
+                    <form action="<?= $path ?>" method="post">
+                        <div class="form-group">
+                            <div class="form-label-group">
+                                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+                                <input type="hidden" name="option" value="exist">
+                                <label for="inputEmail">Email address</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label-group">
+                                <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                                <label for="inputPassword">Password</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="remember-me">
+                                    Remember Password
+                                </label>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block">Login</button>
+                    </form>
+                    <div class="text-center">
+                        <a class="d-block small mt-3" href="RegisterClient.php">Register an Account</a>
+                        <a class="d-block small" href="#">Forgot Password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
+    }
+
 }

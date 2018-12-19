@@ -31,5 +31,8 @@ if ($_POST) {
     if ($option == 'remove') {
         $id = $_POST['rem'];
         $dao->delete($id);
+    }else if($option == 'finish'){
+        $id = $_POST['idPed'];
+        $dao->edit($id);
     }
 }

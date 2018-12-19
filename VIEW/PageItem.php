@@ -74,17 +74,6 @@
                 <!--informações de compra-->
                 <div class="col-lg-3">
                     <form>
-
-
-                        <h4 class="my-4">Tipo de Pagamento</h4>
-                        <div class="list-group">
-                            <select class="form-control">
-                                <option value="ch">Cheque</option>
-                                <option value="din">Boleto</option>
-                                <option value="car">Cartão</option>
-                            </select>
-                        </div>
-
                         <div class="card card-outline-secondary my-4">
                             <div class="card-header">
                                 Quatidade Deseja

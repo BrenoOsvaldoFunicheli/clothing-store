@@ -98,6 +98,8 @@ if ($option == 'Mensagens') {
         include_once '../CONTROLLER/ClientController.php';
         include_once '../CONTROLLER/ProdutoController.php';
         ModalDelete::createModalDelete('../CONTROLLER/OrderController.php');
+        ModalViewer::createModalPedido('../CONTROLLER/OrderController.php');
+        
         $result = OrderController::search();
         ?>
         <script type="text/javascript" src="../js/FunctionsPedido.js"></script>
@@ -111,6 +113,7 @@ if ($option == 'Mensagens') {
                     <th>Qtd</th>
                     <th>Tam</th>
                     <th>Cor</th>
+                    <th>Data</th>
                     <th>Opções</th>
                 </tr>
             </thead>
@@ -120,13 +123,15 @@ if ($option == 'Mensagens') {
                     <tr>
                         <td id="id<?= $value[0] ?>"><?= $value[0] ?></td>
                         <td id="cli<?= $value[0] ?>"><?= ClientController::getClient($value[2])[0][1] ?></td>
-                        <td id="tel<?= $value[0] ?>"><?= ProdutoController::getProduct($value[1])[0][2] ?></td>
+                        <td id="prod<?= $value[0] ?>"><?= ProdutoController::getProduct($value[1])[0][2] ?></td>
                         <td id="qtd<?= $value[0] ?>"><?= $value[3] ?></td>
                         <td id="tam<?= $value[0] ?>"><?= $value[4] ?></td>
                         <td id="cor<?= $value[0] ?>"><?= $value[5] ?></td>
+                        <td id="cor<?= $value[0] ?>"><?= $value[7] ?></td>
                         <td>
-                            <button type="button"  class="btn btn-primary view-p"  data-toggle="modal" data-target="#view" data-whatever="view">Visualizar</button>
-                            <button type="button"  class="btn btn-success view-e" data-toggle="modal" data-target="#view" data-whatever="view">Finazalizar</button>
+                            <button type="button"  class="btn btn-primary viewBtn"  data-toggle="modal" data-target="#pedidoM" data-whatever="pedidoM">Visualizar</button>
+                            <input type="hidden" id="viewBtn" value="<?=$value[0]?>">
+                            <button type="button"  class="btn btn-success viewFin" data-toggle="modal" data-target="#pedidoM" data-whatever="pedidoM">Finazalizar</button>
                             <button type="button"  id="<?= $value[0] ?>" class="btn btn-danger view-d"  data-toggle="modal" data-target="#delete" data-whatever="delete">Excluir</button>
                         </td>
                     </tr>
@@ -138,18 +143,18 @@ if ($option == 'Mensagens') {
     <?php
     } else if ($_POST['option'] == 'Vendas') {
         include_once '../CONTROLLER/OrderController.php';
+        include_once '../CONTROLLER/ClientController.php';
+        include_once '../CONTROLLER/ProdutoController.php';
         $result = OrderController::searchSales();
         ?>
         <table  class = "table table-hover table-striped table-responsive-sm table-responsive-md table-responsive-">
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Cliente</th>
                     <th>Produto</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
                     <th>Qtd</th>
-                    <th>tam</th>
+                    <th>Tam</th>
                     <th>Cor</th>
                     <th>Data</th>
                     <th>Opções</th>
@@ -158,15 +163,13 @@ if ($option == 'Mensagens') {
             <tbody>
     <?php foreach ($result as $value) { ?>
                     <tr>
-                        <td><?= $value[0] ?></td>
-                        <td><?= $value[1] ?></td>
-                        <td><?= $value[2] ?></td>
-                        <td><?= $value[3] ?></td>
-                        <td><?= $value[4] ?></td>
-                        <td><?= $value[5] ?></td>
-                        <td><?= $value[6] ?></td>
-                        <td><?= $value[7] ?></td>
-                        <td><?= $value[9] ?></td>
+                       <td id="id<?= $value[0] ?>"><?= $value[0] ?></td>
+                        <td id="cli<?= $value[0] ?>"><?= ClientController::getClient($value[2])[0][1] ?></td>
+                        <td id="prod<?= $value[0] ?>"><?= ProdutoController::getProduct($value[1])[0][2] ?></td>
+                        <td id="qtd<?= $value[0] ?>"><?= $value[3] ?></td>
+                        <td id="tam<?= $value[0] ?>"><?= $value[4] ?></td>
+                        <td id="cor<?= $value[0] ?>"><?= $value[5] ?></td>
+                        <td id="cor<?= $value[0] ?>"><?= $value[7] ?></td>
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#view" data-whatever="view">Visualizar</button>
 
