@@ -30,11 +30,11 @@ class Header {
                             <a class="nav-link js-scroll-trigger" href="../index.php">Voltar</a>
                         </li> <li class="nav-item">
                             <?php
-                            if (!(isset($_SESSION))) {
-                                session_start();
-                                $_SESSION['uCod'] = '0';
+                            if ((isset($_SESSION['uCod']))) {
                                 $cod_user = $_SESSION['uCod'];
                             } else {
+                                session_start();
+                                $_SESSION['uCod'] = '0';
                                 $cod_user = $_SESSION['uCod'];
                             }
                             if ($cod_user != '0') {
@@ -76,12 +76,17 @@ class Header {
 
                         <li class="nav-item">
                             <?php
-                            if (!(isset($_SESSION))) {
-                                session_start();
+                            if ((isset($_SESSION['uCod']))) {
                                 $cod_user = $_SESSION['uCod'];
                             } else {
-                                $_SESSION['uCod'] = '0';
-                                $cod_user = $_SESSION['uCod'];
+                                try {
+                                    session_start();
+                                    $_SESSION['uCod'] = '0';
+                                    $cod_user = $_SESSION['uCod'];
+                                } catch (Exception $e) {
+                                    $_SESSION['uCod'] = '0';
+                                    $cod_user = $_SESSION['uCod'];
+                                }
                             }
                             if ($cod_user != '0') {
 //                                include_once '../CONTROLLER/ClientController.php';
