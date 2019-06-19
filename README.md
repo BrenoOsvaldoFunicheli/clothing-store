@@ -1,5 +1,6 @@
 # clothing-store
-Site de Roupas com estampas que permite ao Dono da loja gerenciar produtos, categorias de produtos e permite comunicação do usuário com o dono da loja além disso, o usuário pode escolher as roupas com a cor que lhe agradar. Foi desenvolvido Com princípios POO utilizando bootstrap, HTML5, CSS3, JavsScript com a biblioteca JQuery, PHP 7, MySQL e faz a persistencia de dados com a biblioteca PDO, além disso as chamadas são assincronas feitas com Ajax.
+
+Prints Clothing Site that allows the Store Owner to manage products, product categories and allows user communication with the store owner. In addition, the user can choose the clothes with the color that pleases them. It was developed with OOP principles using bootstrap, HTML5, CSS3, JavsScript with the JQuery library, PHP 7, MySQL and makes data persistence with the PDO library, in addition the calls are asynchronous made with Ajax.
 
 
 
